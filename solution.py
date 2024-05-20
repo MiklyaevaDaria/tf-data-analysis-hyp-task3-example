@@ -1,11 +1,9 @@
 import pandas as pd
 import numpy as np
+from scipy.stats import ttest_ind
 
+chat_id = 819168380
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
-
-def solution(...) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+def solution(control_npv: np.array, test_npv: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
+    t_value, p_value = ttest_ind(control_npv, test_npv, equal_var=False)
+    return p_value < 0.09
