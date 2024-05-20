@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import ttest_ind
 
+
 chat_id = 819168380
 
 def solution(control_npv: np.array, test_npv: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
